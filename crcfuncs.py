@@ -7,6 +7,7 @@
 
 from crc import crc
 
+# 8-bit CRC
 crc8 = lambda data: crc(data, size=8, poly=0x07)
 crc8cdma2000 = lambda data: crc(data, size=8, poly=0x9B, init=0xFF)
 crc8rohc = lambda data: crc(data, size=8, poly=0x07, init=0xFF, refin=True, refout=True)
