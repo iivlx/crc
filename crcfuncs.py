@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+''' CRC functions
+
+'''
+
 from crc import crc
 
 crc8 = lambda data: crc(data, size=8, poly=0x07)
