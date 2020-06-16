@@ -9,7 +9,7 @@ from reflect import reflect, reflectbin
 
 def crcinit(init, size, poly):
     highbit = 1 << size-1
-    for i in range(init.bit_length()):
+    for i in range(size):
         bit = init & 1
         if bit:
             init = init ^ poly
@@ -27,7 +27,8 @@ def crc(data, size=0, poly=0, refin=0, refout=0, init=0, direct=1, xorout=0):
     if init:
         if direct:
             init = crcinit(init, size, poly)
-        pad_bits = data.bit_length() % 4
+        mod = data.bit_length() % 4
+        pad_bits = 4 - mod if mod else 0
         data = (init << data.bit_length()+pad_bits) + data
     data = data << size
     out = 0
