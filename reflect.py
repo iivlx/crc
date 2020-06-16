@@ -18,6 +18,6 @@ def reflectbytes(b):
 def reflect(num):
     ''' reflect the bits in each byte of a number '''
     s = hex(num)[2:]
-    if len(s) % 2 == 1:
+    if len(s) % 2:
         s = '0' + s
     return int.from_bytes(reflectbytes(bytes.fromhex(s)), 'big')
