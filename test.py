@@ -27,3 +27,5 @@ assert crc(check, size=32, poly=0x814141AB) == 0x3010BF7F # CRC-32Q
 assert crc(check, size=32, poly=0x04C11DB7, xorout=0xFFFFFFFF ) == 0x765E7680 # CRC-32/POSIX
 assert crc(check, size=32, poly=0x1EDC6F41, init=0xFFFFFFFF, refin=True, refout=True, xorout=0xFFFFFFFF) == 0xE3069283 # CRC-32C
 assert crc(check, size=32, poly=0xA833982B, init=0xFFFFFFFF, refin=True, refout=True, xorout=0xFFFFFFFF) == 0x87315576 # CRC-32D
+# 64-bit CRC
+assert crc(check, size=64, poly=0x42F0E1EBA9EA3693, init=0xFFFFFFFFFFFFFFFF, refin=True, refout=True, xorout=0xFFFFFFFFFFFFFFFF) == 0x995DC9BBDF1939FA # CRC-64
